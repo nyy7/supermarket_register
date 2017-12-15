@@ -16,8 +16,3 @@ RUN chmod +x /usr/local/supermarket_register/tests/test_register.py
 RUN chmod +x /usr/local/supermarket_register/tests/test_calculator.py
 
 RUN ln -s /usr/local/supermarket_register/scripts/register.py /usr/bin/supermarket_register
-#RUN ln -s /usr/local/supermarket_register/test/test_all.py /usr/bin/supermarket_register_test
-
-#WORKDIR "/usr/local/supermarket_register/test/"
-#CMD ["python -m test_register > loggg 2>&1"]
-

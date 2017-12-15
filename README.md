@@ -4,12 +4,16 @@ A dockerized software which calculates the cost of purchase for a number of prod
 
 ## Prerequisites
 
-The user needs to have docker and make installed to run the program. For rhel, run the following command to install required packages.
+The user needs to have docker, docker-compose and make installed to run the program. For rhel, run the following command to install required packages.
 
 ```
 yum install -y make
 
 yum install -y docker
+
+# install docker-compose
+curl -L https://github.com/docker/compose/releases/download/1.17.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
 
 ```
 

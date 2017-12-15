@@ -20,8 +20,8 @@ coverage report -m
 echo
 echo
 if [ "$BUILD_STATE" -eq 0 ]; then
-    echo "Build is STABLE"
+    echo -e "\e[92mBuild is STABLE\e[0m"
 else
-    echo "Build is UNSTABLE"
+    echo -e "\e[91mBuild is UNSTABLE\e[0m"
 fi
 exit $BUILD_STATE

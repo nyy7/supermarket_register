@@ -1,17 +1,16 @@
 build:
-	docker build . -t register_img
+	docker-compose build
 
 test: build
-	docker rm -f regc || true
-	docker run -d --name regc -t register_img
+	docker-compose up -d
 	docker exec regc /usr/local/supermarket_register/tests/testsuit
+	docker-compose down
 
 run: build
-	docker rm -f regc || true
-	docker run -d --name regc -t register_img
-	
+	docker-compose up -d
+
 run-example: build
-	docker rm -f regc || true
-	docker run -d --name regc -t register_img
+	docker-compose up -d
 	docker exec -e SKU='A12T-4GH7-QPL9-3N4M' regc supermarket_register
+	docker-compose down
 

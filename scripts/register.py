@@ -3,7 +3,6 @@
 # author: Yanyan Ni
 # date: 12/15/17
 # description: a function to run calculator and print proper output
-# e.g. ./register.py "a12t-4gh7-qpl9-3n4ma"
 #########
 from calculator import Calculator
 import sys, os
