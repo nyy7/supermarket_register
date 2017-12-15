@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+cd "$(dirname "$0")/../tests"
+BUILD_STATE=0
+
+function check_state {
+    echo --------------------------------------------------------------------------------
+    echo $@
+    echo
+    $@
+    BUILD_STATE=$((BUILD_STATE+$?))
+}
+
+check_state coverage run test_calculator.py
+coverage report -m
+check_state coverage run test_register.py
+coverage report -m
+
+
+echo
+echo
+if [ "$BUILD_STATE" -eq 0 ]; then
+    echo "Build is STABLE"
+else
+    echo "Build is UNSTABLE"
+fi
+exit $BUILD_STATE
